@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>UI-Assignment</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./assets/css/stylesheet.css"/>
+    <script src="./assets/js/jquery-3.1.1.min.js"></script>
+    <script src="./assets/js/chart.js"></script>
+</head>
+
+<body>
+<div class="warpper-inner">
+
+    <!--<form id="data" method="post" enctype="multipart/form-data">-->
+    <!--<input type="text" name="first" value="Bob" />-->
+    <!--<input type="text" name="middle" value="James" />-->
+    <!--<input type="text" name="last" value="Smith" />-->
+    <!--<input name="image" type="file"/>-->
+    <!--<button>Submit</button>-->
+    <!--</form>-->
+</div>
+<div class="main">
+    <div class="container">
+        <div class="aside">
+            <div class="black-box">
+                <div class="dashboard">
+                    <p><i class="fa fa-dashboard"></i> Dashborad</p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-newspaper-o"></i> News feed</p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-inbox"></i> Inbox <i class="fa fa-calendar calender"></i></p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-tasks"></i> Tasks <i class="fa fa-calendar calender-red"></i></p>
+                </div>
+            </div>
+            <div class="black-box">
+                <div class="dashboard">
+                    <p><i class="fa fa-dashboard"></i> Dashborad</p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-newspaper-o"></i> News feed</p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-inbox"></i> Inbox <i class="fa fa-calendar calender"></i></p>
+                </div>
+                <div class="dashboard">
+                    <p><i class="fa fa-tasks"></i> Tasks <i class="fa fa-calendar calender-red"></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="row">
+                <div class="span12">
+                    <div class="white-box">
+                        <p><i class="fa fa-users users"></i></p>
+                        <p>65%</p>
+                        <p class="small">growth</p>
+                    </div>
+                    <div class="white-box">
+                        <p><i class="fa fa-users users"></i></p>
+                        <p>65%</p>
+                    </div>
+                    <div class="white-box">
+                        <p><i class="fa fa-money users"></i></p>
+                        <p>15263</p>
+                        <p class="small">growth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="white-box">
+                        <p><i class="fa fa-users users"></i></p>
+                        <p>65%</p>
+                        <p class="small">growth</p>
+                    </div>
+                    <div class="white-box">
+                        <p><i class="fa fa-users users"></i></p>
+                        <p>65%</p>
+                    </div>
+                    <div class="white-box">
+                        <div class="pb-light-grey">
+                            <div class="pb-container pb-green pb-center" style="width:25%">25%</div>
+                        </div>
+                        <br>
+                        <div class="pb-light-grey">
+                            <div class="pb-container pb-green pb-center" style="width:75%">75%</div>
+                        </div>
+                        <br>
+                        <div class="pb-light-grey">
+                            <div class="pb-container pb-green pb-center" style="width:55%">55%</div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 35px">
+                    <div class="aside-table" style="float:left;">
+                        Show <select name="" style="width:100px">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    </div>
+                    <div class="right-side" style="float:right">
+                            search <input type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table cellpadding="5" cellspacing="5" class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                Redering Engine
+                            </th>
+                            <th>
+                                Redering Engine
+                            </th>
+                            <th>
+                                Redering Engine
+                            </th>
+                            <th>
+                                Redering Engine
+                            </th>
+                            <th>
+                                Redering Engine
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Gecko</td>
+                            <td>Gecko</td>
+                            <td>Gecko</td>
+                            <td>Gecko</td>
+                            <td>Gecko</td>
+                        </tr>
+                        <tr>
+                            <td>Gecko</td>
+                            <td>Mozilla</td>
+                            <td>Win</td>
+                            <td>1.7</td>
+                            <td>A</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    $("form#data").submit(function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: window.location.pathname,
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+                alert("hi");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
+</script>
+<!-- JS Include  -->
+
+</body>
+
+</html>
